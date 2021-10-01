@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title> pass page </title>
+ </head>
+<body>
+
+<h2> Pass phrase by Dhanalakshmi Ramineni </h2>
+<form>
+
+    <label for="secretphase">Enter the secret phrase </label>
+
+    <input type ="password" id="secretphase" value ="Let me in"> <br>
+
+
+
+    <label for="phrase">Enter a phrase </label>
+
+    <input type ="text" id="phrase"  autofocus> <br>
+
+
+
+    <input type="button" onclick="processPhrase()" value="Check the phrase"/>
+
+</form>
+
+<div id="result"></div>
+
+
+
+<script> 
+
+var right=0,wrong=0;
+
+function processPhrase (){
+
+    
+
+    spValue = document.getElementById("secretphase").value
+
+    phraseValue = document.getElementById("phrase").value
+
+    resultDiv = document.getElementById("result")
+
+
+
+    if(spValue==phraseValue){
+
+        alert("Access allowed");
+
+    right=right+1;
+
+    }else{
+
+        alert("Access denied");
+
+        wrong=wrong+1;
+
+    }
+
+
+
+   
+
+    resultDiv.innerHTML="right count: "+right+'<br>'+" Wrong count: "+wrong;
+
+   
+
+}
+
+</script>
+
+
+
+
+</body>
+</html> 
