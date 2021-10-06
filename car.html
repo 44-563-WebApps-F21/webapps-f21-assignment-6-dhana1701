@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ 
+<body>
+    <head>
+        <title> Car Order </title>
+    </head>
+ 
+<h2> "Dhanalakshmi Ramineni"orders a car </h2>
+
+<form>
+    <label for="electric">electric </label>
+    <input type ="checkbox" id="electric" name=Hat  value="electric"> <br>
+
+    <label for="ac">ac </label>
+    <input type ="checkbox" id="ac" name="Scarf"  value="ac"> <br>
+
+    <label for="gps">gps </label>
+    <input type ="checkbox" id="gps" name="Shirt" value="gps"> <br><br>
+
+    <input type="button" onclick="OrderCar()" value="Order a car"><br><br>
+</form>
+
+
+<div id="result">my_car will be displayed here</div>
+
+
+<script> 
+var my_car={}
+function OrderCar(){
+    my_car = {}
+    if(document.getElementById("electric").checked){
+            my_car["electric "]=true;
+        }else{
+            my_car["electric "]=false;
+        }
+    if(document.getElementById("ac").checked){
+            my_car["ac "]=true;
+        }else{
+            my_car["ac "]=false;
+        } 
+    if(document.getElementById("gps").checked){
+            my_car["gps "]=true;
+        }else{
+            my_car["gps "]=false;
+        }
+         out = document.getElementById("result")
+        my_car = JSON.stringify(my_car)
+        out.innerHTML=my_car
+        my_car = JSON.parse(my_car)
+        
+    }
+
+</script>
+
+</body>
+</html> 
