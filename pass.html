@@ -10,7 +10,7 @@
 
     <label for="secretphase">Enter the secret phrase </label>
 
-    <input type ="password" id="secretphase" value ="Let me in"> <br>
+    <input type ="password" id="secretphase" value ="Anu Navya Dhana Suma Sai"> <br>
 
 
 
@@ -25,8 +25,10 @@
 </form>
 
 <div id="result"></div>
-
-
+<br><br>
+<div class="container">
+    <img src= "Image/rabbit.jpg" id="rabbit" alt="rabbit" height="200" width="200" onclick="newImage()">
+</div>
 
 <script> 
 
@@ -42,8 +44,6 @@ function processPhrase (){
 
     resultDiv = document.getElementById("result")
 
-
-
     if(spValue==phraseValue){
 
         alert("Access allowed");
@@ -57,21 +57,26 @@ function processPhrase (){
         wrong=wrong+1;
 
     }
-
-
-
-   
-
     resultDiv.innerHTML="right count: "+right+'<br>'+" Wrong count: "+wrong;
+}
+    var usingImage=1;
+    function newImage(){
 
-   
-
+        Image=document.getElementById("rabbit")
+        switch(usingImage){
+            case 1 : Image.src = "Image/jumbo.jpg"
+                     usingImage =usingImage +1;
+                     break;
+            case 2 : Image.src = "Image/monkey.jpg"
+                     usingImage =usingImage +1;
+                     break; 
+            case 3 : Image.src = "Image/rabbit.jpg"
+                     usingImage =usingImage +1;
+                     break; 
+            
+            } 
 }
 
 </script>
-
-
-
-
 </body>
 </html> 
